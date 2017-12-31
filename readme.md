@@ -17,3 +17,10 @@ To set up a production build run:
 ```
 npm run build
 ```
+
+You will have to update your hosts file, you can follow the instructions here:
+[Windows Host File](https://support.rackspace.com/how-to/modify-your-hosts-file/) and add:
+
+```
+127.0.0.1 mememachine.test
+```
