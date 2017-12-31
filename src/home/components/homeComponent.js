@@ -2,8 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
-import ArticleBox from "../../global/components/ContentBoxes/MemoryBox";
-import ContentColumns from '../../global/components/Content/ContentColumns';
+import CompetitionBanner from './CompetitionBanner';
 import {helper} from "react-stockcharts";
 let {fitWidth} = helper;
 
@@ -21,15 +20,15 @@ class HomeComponent extends Component {
     }
 
     render() {
-        const {className} = this.props;
+        const {className, competitions, polls} = this.props;
         const meta = {
-            title: 'Our Memories',
-            description: 'Thoughts on everything we have been through',
-            canonical: 'http://davisbanks.com',
+            title: 'Meme Machine',
+            description: 'Our groups annual competition throughout the years.',
+            canonical: 'http://mememachine.com',
             meta: {
                 charset: 'utf-8',
                 name: {
-                    keywords: 'davis,banks,developer,engineer,mysql,php,react,web'
+                    keywords: 'meme,delta,poptart,garho,foo,minirr'
                 }
             }
         };
@@ -37,7 +36,9 @@ class HomeComponent extends Component {
         return (
             <DocumentMeta {...meta}>
                 <div className={classnames('HomeComponent', className)}>
-                    <ContentColumns content={this.props.memories} width={this.props.width}/>
+                    {competitions.map(function(competition, key) {
+                        return <CompetitionBanner competition={competition} key={key}/>
+                    })}
                 </div>
             </DocumentMeta>
         )

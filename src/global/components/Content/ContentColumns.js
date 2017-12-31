@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button, Grid, Row, Col} from 'react-bootstrap';
 import {requestContent, clearExtraContent} from '../../actions';
-import MemoryBox from '../ContentBoxes/MemoryBox';
 import './index.sass';
 
 class ContentColumns extends Component {
@@ -16,7 +15,7 @@ class ContentColumns extends Component {
         const {className, ...props} = this.props;
 
         let contentComp = (content, key) => <div className="home-box" key={key}>
-            <MemoryBox item={content} performUpdate={this.props.performUpdate} user={this.props.user} openModal={this.props.openModal}/>
+
         </div>;
 
         let content = this.props.content.concat(this.props.addedContent);

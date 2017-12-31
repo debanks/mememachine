@@ -9,6 +9,7 @@ export function requestContent() {
 export function success(data) {
     return {
         type: types.HOME_SUCCESS,
-        memories: data.memories
+        competitions: data.competitions,
+        polls: data.polls
     }
 }

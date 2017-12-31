@@ -8,7 +8,7 @@ function* getContent(action) {
     try {
 
         yield put(showLoading("Loading...", "spinner"));
-        let response = yield call(ApiService.performRequest, '/api/memories', true, 'GET');
+        let response = yield call(ApiService.performRequest, '/api/meme/home', true, 'GET');
 
         if (response) {
             yield put(success(response));

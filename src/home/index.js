@@ -16,7 +16,8 @@ class Home extends Component {
 
 function mapStateToProps(state, ownProps) {
     return {
-        memories: state.home.memories
+        competitions: state.home.competitions,
+        polls: state.home.polls
     }
 }
 
