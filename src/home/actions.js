@@ -10,6 +10,7 @@ export function success(data) {
     return {
         type: types.HOME_SUCCESS,
         competitions: data.competitions,
-        polls: data.polls
+        polls: data.polls,
+        results: data.results
     }
 }

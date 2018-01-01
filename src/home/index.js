@@ -17,7 +17,8 @@ class Home extends Component {
 function mapStateToProps(state, ownProps) {
     return {
         competitions: state.home.competitions,
-        polls: state.home.polls
+        polls: state.home.polls,
+        results: state.home.results
     }
 }
 
