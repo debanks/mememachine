@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
 import CompetitionBanner from './CompetitionBanner';
+import PollBox from './PollBox';
 import {helper} from "react-stockcharts";
 import NumberFormat from '../../services/NumberFormat';
 let {fitWidth} = helper;
@@ -69,6 +70,12 @@ class HomeComponent extends Component {
                     <div className="flex-cols">
                         {competitions.map(function (competition, key) {
                             return <CompetitionBanner competition={competition} key={key}/>
+                        })}
+                    </div>
+                    <div className="flex-header">Open Polls</div>
+                    <div className="flex-cols">
+                        {polls.map(function (poll, key) {
+                            return <PollBox poll={poll} key={key}/>
                         })}
                     </div>
                 </div>
